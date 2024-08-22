@@ -1,49 +1,59 @@
-# Estrutura de Projeto
-## Backend com Flask
+# Projeto de Portfólio - Empresa de Turismo
 
-#### Organize as pastas do projeto Flask:
-app/: Contém os pacotes da aplicação.
-    templates/: Para templates HTML.
-    static/: Para arquivos estáticos (CSS, imagens, JavaScript).
-    routes.py: Define as rotas da aplicação.
-    models.py: Define os modelos de banco de dados.
-    forms.py: Gerencia os formulários (opcional, caso não use uma solução de frontend como Vue/React).
-    services.py: Lógica de negócios.
-    *api.py: Contém as rotas da API REST.
-migrations/: Para controle de migrações do banco de dados.
-config.py: Configurações da aplicação (ambiente, chave secreta, etc).
-tests/: Testes unitários e de integração.
+Este projeto é uma aplicação web para uma pequena empresa de turismo que organiza viagens. O backend é desenvolvido em Flask, com um frontend estilizado utilizando Tailwind CSS. O sistema inclui funcionalidades como cadastro de clientes, agendamento de viagens, gestão de pacotes turísticos, e integração com sistemas de pagamento.
+
+## Estrutura do Projeto
+
+### Backend com Flask
+
+#### Estrutura de Pastas:
+- **app/**: Contém os pacotes da aplicação.
+  - **templates/**: Armazena os templates HTML.
+  - **static/**: Armazena arquivos estáticos como CSS, imagens e JavaScript.
+  - **routes.py**: Define as rotas da aplicação.
+  - **models.py**: Define os modelos de banco de dados.
+  - **forms.py**: Gerencia os formulários (opcional, caso não use uma solução de frontend como Vue/React).
+  - **services.py**: Contém a lógica de negócios.
+  - **api.py**: Define as rotas da API REST.
+- **migrations/**: Controle de migrações do banco de dados.
+- **config.py**: Configurações da aplicação (ambiente, chave secreta, etc).
+- **tests/**: Testes unitários e de integração.
 
 ### Frontend com Tailwind CSS
 
-#### Instale e configure Tailwind:
-Use um gerenciador de pacotes como npm/yarn para instalar.
-Crie um arquivo de configuração tailwind.config.js para personalizar o design.
-Organize os componentes de UI de maneira modular (ex.: navegação, formulários, cartões de pacotes de viagem).
-API REST
+#### Instalação e Configuração:
+- Use um gerenciador de pacotes como npm/yarn para instalar Tailwind CSS.
+- Crie um arquivo de configuração `tailwind.config.js` para personalizar o design.
+- Organize os componentes de UI de maneira modular (ex.: navegação, formulários, cartões de pacotes de viagem).
 
-#### Estruture as rotas RESTful no Flask:
+### API REST
 
-Use blueprints para modularizar diferentes funcionalidades (ex.: rotas de clientes, viagens, pagamentos).
-Use uma biblioteca como Flask-RESTful ou Flask-Swagger para organizar as APIs.
-Banco de Dados
+#### Estrutura das Rotas RESTful:
+- Utilize Blueprints para modularizar diferentes funcionalidades (ex.: rotas de clientes, viagens, pagamentos).
+- Use uma biblioteca como Flask-RESTful ou Flask-Swagger para organizar e documentar as APIs.
 
- - Escolha um banco de dados (ex.: SQLite, PostgreSQL).
- - Defina os modelos de dados no models.py.
- - Clientes
- - Viagens
- - Pacotes de viagem
- - Pagamentos
+### Banco de Dados
+
+#### Configuração e Modelagem:
+- Escolha um banco de dados adequado (ex.: SQLite para desenvolvimento, PostgreSQL para produção).
+- Defina os modelos de dados no `models.py` para as seguintes entidades:
+  - Clientes
+  - Viagens
+  - Pacotes de viagem
+  - Pagamentos
 
 ### Sistema de Agendamento
 
-- Crie um sistema para gerenciar as viagens disponíveis (datas, pacotes, disponibilidade).
-Defina rotas e lógica de reserva.
-- Garanta que o calendário e a disponibilidade sejam sincronizados com o banco de dados.
-Formas de Pagamento
+#### Funcionalidades:
+- Desenvolva um sistema para gerenciar as viagens disponíveis (datas, pacotes, disponibilidade).
+- Defina rotas e lógica de reserva.
+- Garanta que o calendário e a disponibilidade estejam sincronizados com o banco de dados.
 
-- Integre uma API de pagamento (ex.: Stripe, PayPal).
-- Defina os modelos para armazenar informações de transações.
+### Formas de Pagamento
+
+#### Integração:
+- Integre uma API de pagamento (ex.: Stripe, PayPal) para processar transações.
+- Defina modelos para armazenar informações de transações no banco de dados.
 
 ### Outras Funcionalidades
 
@@ -51,31 +61,39 @@ Formas de Pagamento
 - Dashboard para o cliente gerenciar suas reservas.
 - Sistema de feedback/review das viagens.
 
-### Tecnologias e Dependências
+## Tecnologias e Dependências
 
-#### Flask
+### Backend
 
-flask
-flask-sqlalchemy (para o banco de dados)
-flask-migrate (para migrações)
-flask-wtf (para formulários)
-flask-restful (para APIs REST)
-flask-login (para autenticação)
-Frontend
+- **Flask**: Framework principal.
+- **flask-sqlalchemy**: ORM para interações com o banco de dados.
+- **flask-migrate**: Controle de migrações de banco de dados.
+- **flask-wtf**: Suporte a formulários (opcional).
+- **flask-restful**: Organização das APIs REST.
+- **flask-login**: Gerenciamento de autenticação.
 
-tailwindcss
-alpinejs ou similar (opcional para interatividade leve)
-Banco de Dados
+### Frontend
 
-SQLite (desenvolvimento) ou PostgreSQL (produção)
-psycopg2 (se usar PostgreSQL)
-Testes
+- **Tailwind CSS**: Framework de CSS utilitário.
+- **Alpine.js** (opcional): Para interatividade leve.
 
-pytest
-pytest-flask
+### Banco de Dados
 
-### Outras Ferramentas
+- **SQLite** (para desenvolvimento) ou **PostgreSQL** (para produção).
+- **psycopg2**: Driver PostgreSQL para Python.
 
-Gerenciador de pacotes: pip ou poetry.
-gunicorn ou uwsgi para o deployment em produção.
-docker (opcional, para containerização do projeto).
+### Testes
+
+- **pytest**: Framework de testes.
+- **pytest-flask**: Extensão para testes em Flask.
+
+## Outras Ferramentas
+
+- **Gerenciador de pacotes**: pip ou poetry.
+- **gunicorn** ou **uwsgi**: Para deployment em produção.
+- **Docker**: Para containerização do projeto (opcional).
+
+### Extras
+
+- **Documentação da API**: Use o Swagger ou Postman para documentar as APIs REST.
+- **Deployment**: Prepare um arquivo `Dockerfile` e um `docker-compose.yml` para o projeto.
