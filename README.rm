@@ -1,0 +1,81 @@
+# Estrutura de Projeto
+## Backend com Flask
+
+#### Organize as pastas do projeto Flask:
+app/: Contém os pacotes da aplicação.
+    templates/: Para templates HTML.
+    static/: Para arquivos estáticos (CSS, imagens, JavaScript).
+    routes.py: Define as rotas da aplicação.
+    models.py: Define os modelos de banco de dados.
+    forms.py: Gerencia os formulários (opcional, caso não use uma solução de frontend como Vue/React).
+    services.py: Lógica de negócios.
+    *api.py: Contém as rotas da API REST.
+migrations/: Para controle de migrações do banco de dados.
+config.py: Configurações da aplicação (ambiente, chave secreta, etc).
+tests/: Testes unitários e de integração.
+
+### Frontend com Tailwind CSS
+
+#### Instale e configure Tailwind:
+Use um gerenciador de pacotes como npm/yarn para instalar.
+Crie um arquivo de configuração tailwind.config.js para personalizar o design.
+Organize os componentes de UI de maneira modular (ex.: navegação, formulários, cartões de pacotes de viagem).
+API REST
+
+#### Estruture as rotas RESTful no Flask:
+
+Use blueprints para modularizar diferentes funcionalidades (ex.: rotas de clientes, viagens, pagamentos).
+Use uma biblioteca como Flask-RESTful ou Flask-Swagger para organizar as APIs.
+Banco de Dados
+
+ - Escolha um banco de dados (ex.: SQLite, PostgreSQL).
+ - Defina os modelos de dados no models.py.
+ - Clientes
+ - Viagens
+ - Pacotes de viagem
+ - Pagamentos
+
+### Sistema de Agendamento
+
+- Crie um sistema para gerenciar as viagens disponíveis (datas, pacotes, disponibilidade).
+Defina rotas e lógica de reserva.
+- Garanta que o calendário e a disponibilidade sejam sincronizados com o banco de dados.
+Formas de Pagamento
+
+- Integre uma API de pagamento (ex.: Stripe, PayPal).
+- Defina os modelos para armazenar informações de transações.
+
+### Outras Funcionalidades
+
+- Área de login e cadastro de clientes.
+- Dashboard para o cliente gerenciar suas reservas.
+- Sistema de feedback/review das viagens.
+
+### Tecnologias e Dependências
+
+#### Flask
+
+flask
+flask-sqlalchemy (para o banco de dados)
+flask-migrate (para migrações)
+flask-wtf (para formulários)
+flask-restful (para APIs REST)
+flask-login (para autenticação)
+Frontend
+
+tailwindcss
+alpinejs ou similar (opcional para interatividade leve)
+Banco de Dados
+
+SQLite (desenvolvimento) ou PostgreSQL (produção)
+psycopg2 (se usar PostgreSQL)
+Testes
+
+pytest
+pytest-flask
+
+### Outras Ferramentas
+
+Gerenciador de pacotes: pip ou poetry.
+gunicorn ou uwsgi para o deployment em produção.
+docker (opcional, para containerização do projeto).
